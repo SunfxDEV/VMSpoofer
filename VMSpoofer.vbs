@@ -9,6 +9,8 @@ If Not WScript.Arguments.Named.Exists("elevate") Then
   WScript.Quit
 End If
 
+WScript.Echo "DO NOT RUN ON NON-VIRTUALIZED MACHINES. Taskkill immediately if so."
+
 SystemKeyPath = "HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System" 
 
 
@@ -23,9 +25,7 @@ objShell.RegWrite SystemKeyPath & "\" & "\BIOS\BiosMajorRelease", "2", "REG_DWOR
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\BiosMinorRelease", "37", "REG_DWORD" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\BIOSVendor", "LENOVO", "REG_SZ" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\BIOSVersion", "H4CN37WW(V2.06)", "REG_SZ" '
-objShell.RegWrite SystemKeyPath & "\" & "\BIOS\SystemFamily", "Ideapad Gaming 3 15IHU6", "REG_SZ" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\SystemManufacturer", "Ideapad Gaming 3 15IHU6", "REG_SZ" '
-objShell.RegWrite SystemKeyPath & "\" & "\BIOS\SystemFamily", "LENOVO", "REG_SZ" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\SystemProductName", "Ideapad Gaming 3 15IHU6", "REG_SZ" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\SystemFamily", "82K1", "REG_SZ" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\SystemSKU", "LENOVO_MT_82K1_BU_idea_FM_IdeaPad Gaming 3 15IHU6", "REG_SZ" '
