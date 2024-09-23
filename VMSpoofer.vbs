@@ -16,6 +16,8 @@ SystemKeyPath = "HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System"
 
 Set objShell = CreateObject("WScript.Shell")
 
+WScript.Echo "Spoofing Registrys..."
+
 On Error Resume Next
 objShell.RegWrite SystemKeyPath & "\" & "BaseBoardManufacturer", "LENOVO", "REG_SZ" '
 objShell.RegWrite SystemKeyPath & "\" & "\BIOS\BaseBoardManufacturer", "LENOVO", "REG_SZ" '
